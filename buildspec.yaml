@@ -24,7 +24,7 @@ phases:
     - echo Pushing docker image
     - docker push $IMAGE_URI
     - echo push completed
-    - printf '[{"name":"%s","imageUri":"%s"}]' $CONTAINER_NAME 156962844638.dkr.ecr.us-west-2.amazonaws.com/hj28_authorization@sha256:ecd3814e25769998577cf105eba6c1f17d9323254279d1e3b3fc7858105ae68e > imagedefinitions.json
+    - printf '[{"name":"%s","imageUri":"%s"}]' $CONTAINER_NAME $IMAGE_URI > imagedefinitions.json
 artifacts:
   files:
   - imagedefinitions.json
