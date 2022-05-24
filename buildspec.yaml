@@ -14,16 +14,16 @@ phases:
     - echo $IMAGE_URI
     - mvn clean package -Ddockerfile.skip
     - docker build -t romauth:latest .
-    - docker tag romauth:latest 156962844638.dkr.ecr.us-west-2.amazonaws.com
+    - docker tag romauth:latest 156962844638.dkr.ecr.us-west-2.amazonaws.com/ci-cd/pipeline/rom/894893
   post_build:
     commands:
     - printenv
     - echo Build completed on `date`
     - echo $(docker images)
     - echo Pushing docker image
-    - docker push 156962844638.dkr.ecr.us-west-2.amazonaws.com
+    - docker push 156962844638.dkr.ecr.us-west-2.amazonaws.com/ci-cd/pipeline/rom/894893
     - echo push completed
-    - printf '[{"name":"%s","imageUri":"%s"}]' 156962844638.dkr.ecr.us-west-2.amazonaws.com > imagedefinitions.json
+    - printf '[{"name":"%s","imageUri":"%s"}]' 156962844638.dkr.ecr.us-west-2.amazonaws.comci-cd/pipeline/rom/894893 > imagedefinitions.json
 artifacts:
   files:
   - imagedefinitions.json
