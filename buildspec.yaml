@@ -9,7 +9,7 @@ phases:
     - aws --version
     - aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 156962844638.dkr.ecr.us-west-2.amazonaws.com
     - TAG="$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION |head -c 8)"
-    - IMAGE_URI=156962844638.dkr.ecr.us-west-2.amazonaws.com/ci-cd/pipeline/rom/894893:${TAG}
+    - IMAGE_URI="156962844638.dkr.ecr.us-west-2.amazonaws.com/ci-cd/pipeline/rom/894893":${TAG}
   build:
     commands:
     - echo Build started on `date`
@@ -24,7 +24,7 @@ phases:
     - echo Pushing docker image
     - docker push $IMAGE_URI
     - echo push completed
-    - printf '[{"name":"%s","imageUri":"%s"}]'  authorization-cicd-container $IMAGE_URI > imagedefinitions.json
+    - printf '[{"name":"%s","imageUri":"%s"}]'  "authorization-cicd-container" $IMAGE_URI > imagedefinitions.json
 artifacts:
   files:
   - imagedefinitions.json
