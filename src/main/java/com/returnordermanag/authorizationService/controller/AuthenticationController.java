@@ -28,7 +28,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RestController
-//@CrossOrigin(origins="http://localhost:4200,http://localhost:8761,http://localhost:8765")
+@CrossOrigin(origins="http://localhost:4200")
 public class AuthenticationController {
 
 	@Autowired
