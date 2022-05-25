@@ -28,7 +28,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RestController
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin(origins="http://localhost:4200/")
 public class AuthenticationController {
 
 	@Autowired
@@ -54,8 +54,8 @@ public class AuthenticationController {
 	 * @RequestMapping({ "/hello" }) public String firstPage() { return
 	 * "Hello World"; }
 	 */
-
 	@PostMapping("/login")
+	@CrossOrigin(origins="http://localhost:4200/")
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest)
 			throws BadCredentialException {
 
