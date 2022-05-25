@@ -33,7 +33,6 @@ public class JwtAuthenticationApplication {
         ).collect(Collectors.toList());
         repository.saveAll(users);
     }
-
 	public static void main(String[] args) {
 		SpringApplication.run(JwtAuthenticationApplication.class, args);
 	}

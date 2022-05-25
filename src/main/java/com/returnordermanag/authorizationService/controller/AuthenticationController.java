@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.returnordermanag.authorizationService.WebConfig;
 import com.returnordermanag.authorizationService.Repository.OrdersRepository;
 import com.returnordermanag.authorizationService.exception.BadCredentialException;
 import com.returnordermanag.authorizationService.model.AuthenticationRequest;
@@ -28,8 +29,8 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RestController
-@CrossOrigin(origins="http://localhost:4200/")
-public class AuthenticationController {
+@CrossOrigin(origins="http://localhost:4200")
+public class AuthenticationController implements WebConfig {
 
 	@Autowired
 	private AuthenticationManager authenticationManager;
