@@ -55,7 +55,6 @@ public class AuthenticationController {
 	 * "Hello World"; }
 	 */
 	@PostMapping("/login")
-	@CrossOrigin(origins="http://localhost:4200/")
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest)
 			throws BadCredentialException {
 
@@ -76,7 +75,6 @@ public class AuthenticationController {
 		log.warn(authenticationRequest.getUsername()+"This is "+orders);
 		return ResponseEntity.ok(new AuthenticationResponse(jwt, true,orders));
 	}
-	
 	@GetMapping("/testing")
 	public String testing() {
 		return new String("Test success go ahead");
